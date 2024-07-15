@@ -1,0 +1,15 @@
+ dill
+gensim
+hnswlib
+numpy
+packaging
+parameterized
+pytest
+scipy
+setuptools
+sklearn
+sphinx_rtd_theme
+torch
+torchtext
+tqdm
+~       

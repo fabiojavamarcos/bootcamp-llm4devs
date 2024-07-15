@@ -1,0 +1,62 @@
+<<<<<<< Updated upstream
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
+=======
+
+from langchain_openai import ChatOpenAI
+>>>>>>> Stashed changes
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+api_key = os.getenv("OPENAI_API_KEY")
+
+<<<<<<< Updated upstream
+# 1. quantidade de tokens é uma limitacao do modelo
+# 2. os modelos sao stateless; nao guardam informacoes anteriores
+# 3. podemos variar a resposta do modelo usando a `temperature`
+
+# resposta = llm.invoke("Oi, meu nome é Gustavo e eu estou no meio de um bootcamp sobre llm.")
+# print(resposta.content)
+# print("\n")
+# resposta = llm.invoke("qual é o meu nome?")
+# print(resposta.content)
+
+
+llm = ChatOpenAI(temperature=1)
+
+def chat_llm(user_query):
+    prompt = ChatPromptTemplate.from_messages([
+                        ("system", "Eu quero que você atue como um expert em design de código."),
+                        ("user", "{user_query}"),
+                    ])
+
+    chain = prompt | llm
+    response = chain.invoke({"user_query" : user_query})
+    return response.content
+
+
+while True:
+    user_query = input("> ")
+    llm_response = chat_llm(user_query)
+    print("> ", llm_response)
+    
+=======
+llm = ChatOpenAI()
+
+# num of tokens
+resposta = llm.invoke("My name is Fabio")
+print(resposta)
+
+print(resposta.content)
+
+print("\n\n)
+
+# stateless
+resposta = llm.invoke("What is my name?")
+print(resposta) #with header
+
+# higher temperature creates diverse answers
+
+>>>>>>> Stashed changes
